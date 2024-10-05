@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1cl3qfecpd3g"]
+
+[ext_resource type="Script" path="res://star.gd" id="1_dtm4c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42613"]
+emission_enabled = true
+emission = Color(0.873385, 0.932323, 6.93083e-06, 1)
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_igu80"]
+material = SubResource("StandardMaterial3D_42613")
+size = Vector2(0.5, 0.5)
+
+[node name="Star" type="Node3D"]
+script = ExtResource("1_dtm4c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_igu80")
