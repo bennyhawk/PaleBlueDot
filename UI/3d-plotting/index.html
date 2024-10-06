@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Three.js Sphere</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+    const rainbowColors = [
+        0xff0000, // Red
+        0xff7f00, // Orange
+        0xffff00, // Yellow
+        0x00ff00, // Green
+        0x0000ff, // Blue
+        0x4b0082, // Indigo
+        0x8b00ff, // Violet
+    ];
+    // Scene, Camera, Renderer setup
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(
+            75,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            10000
+    );
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+    fetch('results_2.json')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(coords => {
+                    const color = rainbowColors[Math.floor(Math.random() * rainbowColors.length)];
+                    createSphere(coords.x, coords.y, coords.z, color, Math.random());
+                });
+            });
+
+    // Function to create and add a white sphere at specified coordinates
+    function createSphere(x, y, z, color = 0xffffff, size = 2) {
+        const geometry = new THREE.SphereGeometry(size, 32, 32);
+        const material = new THREE.MeshBasicMaterial({color: color});
+        const sphere = new THREE.Mesh(geometry, material);
+        sphere.position.set(x, y, z);
+        scene.add(sphere);
+    }
+
+
+    // Set camera position far back to "zoom out"
+    camera.position.set(0, 0, 400);
+    camera.lookAt(0, window.innerHeight / 3, 0);
+    createSphere(camera.position.x, camera.position.y, camera.position.z, 0xffff00, 2);
+    const axesHelper = new THREE.AxesHelper(50);
+    scene.add(axesHelper);
+
+    // Animation loop
+    function animate() {
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // Handle window resize
+    window.addEventListener("resize", () => {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+    });
+</script>
+</body>
+</html>
