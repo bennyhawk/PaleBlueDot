@@ -1,18 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1cl3qfecpd3g"]
+[gd_scene load_steps=6 format=3 uid="uid://c1cl3qfecpd3g"]
 
 [ext_resource type="Script" path="res://star.gd" id="1_dtm4c"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42613"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wfxh3"]
 emission_enabled = true
-emission = Color(0.873385, 0.932323, 6.93083e-06, 1)
+emission = Color(0.87451, 0.933333, 0, 1)
 billboard_mode = 1
 
-[sub_resource type="QuadMesh" id="QuadMesh_igu80"]
-material = SubResource("StandardMaterial3D_42613")
+[sub_resource type="QuadMesh" id="QuadMesh_7ggpw"]
+material = SubResource("StandardMaterial3D_wfxh3")
 size = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_140io"]
+emission_enabled = true
+emission = Color(0.87451, 0.933333, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_jipt0"]
+material = SubResource("StandardMaterial3D_140io")
+radius = 0.1
+height = 0.2
+radial_segments = 16
+rings = 8
 
 [node name="Star" type="Node3D"]
 script = ExtResource("1_dtm4c")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("QuadMesh_igu80")
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("QuadMesh_7ggpw")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_jipt0")

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bwt4e81d83t66"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_right = 227.0
+offset_bottom = 66.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="ResetCamera" type="MenuButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Reset Camera"
+flat = false
+
+[node name="LandOnPlanet" type="MenuButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Land on planet"
+flat = false
+
+[node name="TakeOff" type="MenuButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Take Off"
+flat = false
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="PlanetName" type="Label" parent="HBoxContainer"]
+layout_mode = 2

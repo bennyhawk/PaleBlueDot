@@ -1,6 +1,5 @@
 res://space.tscn
-res://free_fly_camera.gd
-res://earth.tscn
+res://planet.tscn
 res://star.tscn
-res://space.gd
-res://star.gd
+res://menu.tscn
+res://planet.gd

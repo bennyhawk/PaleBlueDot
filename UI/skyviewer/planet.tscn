@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvlur0gsffe1s"]
+
+[ext_resource type="Script" path="res://planet.gd" id="1_b5bh1"]
+
+[sub_resource type="Gradient" id="Gradient_4yoj1"]
+offsets = PackedFloat32Array(0.144476, 0.750708)
+colors = PackedColorArray(0, 0, 0.356863, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ji0fl"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kcnbt"]
+color_ramp = SubResource("Gradient_4yoj1")
+noise = SubResource("FastNoiseLite_ji0fl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0wp2"]
+emission_enabled = true
+emission = Color(0, 0, 0.647059, 1)
+emission_energy_multiplier = 0.5
+emission_texture = SubResource("NoiseTexture2D_kcnbt")
+
+[sub_resource type="SphereMesh" id="SphereMesh_vky0p"]
+material = SubResource("StandardMaterial3D_a0wp2")
+radial_segments = 128
+rings = 64
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_a3m3l"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0kked"]
+
+[node name="Planet" type="Node3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+script = ExtResource("1_b5bh1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_vky0p")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("SphereShape3D_a3m3l")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("SphereMesh_0kked")
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

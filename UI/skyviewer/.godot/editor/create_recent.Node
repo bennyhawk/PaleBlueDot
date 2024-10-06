@@ -1,3 +1,13 @@
-Node3D
+VSeparator
+MarginContainer
+Label
+HBoxContainer
+VBoxContainer
+MenuButton
 MeshInstance3D
 Camera3D
+CollisionShape3D
+Area3D
+PopupMenu
+MenuBar
+Node3D

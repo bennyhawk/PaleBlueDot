@@ -38,6 +38,12 @@ ui_camera_right={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="planets"
+3d_physics/layer_2="stars"
+3d_physics/layer_3="menu"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
