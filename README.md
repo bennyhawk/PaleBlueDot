@@ -51,5 +51,5 @@ ExoSky is an interactive educational platform designed to visualize the night sk
 *Figure 1: Visualization of the star catalog data.*
 
 ![Star Catalog Visualization](https://github.com/bennyhawk/PaleBlueDot/blob/main/screenshot_2.jpeg)
-*Figure 1: Visualization of the stars from spaceship.*
+*Figure 2: Visualization of the stars from spaceship.*
 
