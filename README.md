@@ -1,5 +1,13 @@
 # ExoSky: Interactive Exoplanet Star Visualization Platform
 
+# Visit website at: https://stellarsight-11370.web.app/
+
+## Images
+![Star Catalog Visualization](https://github.com/bennyhawk/PaleBlueDot/blob/main/screenshot_1.jpeg)
+*Figure 1: Visualization of the star catalog data.*
+
+![Star Catalog Visualization](https://github.com/bennyhawk/PaleBlueDot/blob/main/screenshot_2.jpeg)
+*Figure 2: Visualization of the stars from spaceship.*
 ## Overview
 ExoSky is an interactive educational platform designed to visualize the night sky from the perspective of any of the 5500+ exoplanets cataloged in NASA’s Exoplanet Archive. It allows users to explore how stars and constellations would appear from a given exoplanet, providing a unique insight into the vastness of the universe from a completely new vantage point. The platform is built to engage users of all ages, blending scientific accuracy with a gamified exploration experience that sparks curiosity and promotes learning.
 
@@ -45,11 +53,4 @@ ExoSky is an interactive educational platform designed to visualize the night sk
 - **Position Conversion**: Accurately transforming star positions for realistic visualization without overwhelming system resources.
 - **Interface Design**: Creating a dynamic, interactive interface that balances scientific precision with visual appeal.
 
-## Images
-
-![Star Catalog Visualization](https://github.com/bennyhawk/PaleBlueDot/blob/main/screenshot_1.jpeg)
-*Figure 1: Visualization of the star catalog data.*
-
-![Star Catalog Visualization](https://github.com/bennyhawk/PaleBlueDot/blob/main/screenshot_2.jpeg)
-*Figure 2: Visualization of the stars from spaceship.*
 
